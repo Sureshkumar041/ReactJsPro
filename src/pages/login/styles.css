@@ -1,0 +1,83 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.loginBg {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/images/images/login_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.loginContainer {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    display: grid;
+    row-gap: 15px;
+}
+
+.signInText {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--violet);
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.iconPng {
+    width: 250px;
+    height: 200px;
+}
+
+.formBottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formBottomSection>a {
+    text-decoration: none;
+    color: var(--primary);
+    padding: 12px 0px;
+}
+
+.formContainer {
+    display: grid;
+    row-gap: 15px;
+}
+
+.infoText {
+    color: #666666;
+    font-weight: 700;
+    text-align: center;
+}
+
+.infoText a {
+    color: var(--primary);
+    text-decoration: none;
+}
