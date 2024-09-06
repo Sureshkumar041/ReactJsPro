@@ -1,0 +1,133 @@
+.navbar {
+    position: fixed;
+    height: 5rem;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: left .2s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .02), 0 0 2px rgba(0, 0, 0, .05), 0 1px 4px rgba(0, 0, 0, .08)
+}
+
+.appLogoContainer {
+    width: 300px;
+}
+
+.appLogo {
+    height: auto;
+    width: 100px;
+}
+
+.navbarContainer {
+    height: 65%;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0px 0px 0px auto;
+
+    i {
+        font-size: 24px;
+        color: #666666;
+        cursor: pointer;
+    }
+}
+
+.menuBarContainer {
+    display: none;
+
+    i {
+        font-size: 24px;
+        color: #666666;
+    }
+}
+
+.appBarContainer {
+    cursor: pointer;
+    display: none;
+
+    i {}
+}
+
+.navbarBottom {
+    width: 100%;
+    height: 35%;
+    background-color: var(--violet);
+    border-top: 4px solid var(--blue);
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+    .navbarContainer {
+        justify-content: space-between;
+    }
+
+    .appLogoContainer {
+        width: auto;
+        order: 2;
+    }
+
+    .appBarContainer {
+        order: 1;
+        display: block;
+    }
+
+    .iconSection {
+        order: 3;
+        margin-left: 0px;
+    }
+
+    .iconContainer {
+        display: none;
+    }
+
+    .menuBarContainer {
+        display: block;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbarContainer {
+        justify-content: space-between;
+
+    }
+
+    .appLogoContainer {
+        width: auto;
+        order: 2;
+    }
+
+    .appBarContainer {
+        order: 1;
+        display: block;
+    }
+
+    .iconSection {
+        order: 3;
+        margin-left: 0px;
+    }
+
+    .iconContainer {
+        display: none;
+    }
+
+    .menuBarContainer {
+        display: block;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

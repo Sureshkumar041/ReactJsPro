@@ -1,0 +1,51 @@
+.fileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E3ECFF;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    column-gap: 14px;
+
+    .fileIconContainer {
+        // width: 5%;
+
+        i {
+            font-size: 40px;
+            color: var(--darkBlue)
+        }
+    }
+
+    .contentFile {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 4px;
+    }
+}
+
+.progessBorder {
+    width: 100%;
+    height: 6px;
+    background-color: var(--primary);
+    border-radius: 25px;
+}
+
+.fileNameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delIcon {
+    cursor: pointer;
+
+    i {
+        color: var(--darkBlue);
+        font-size: 24px !important;
+    }
+}

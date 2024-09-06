@@ -1,0 +1,30 @@
+.headerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 4px;
+
+    p {
+        font-size: 14px;
+    }
+
+    i {
+        font-size: 22px;
+    }
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+}
+
+@media (max-width:767px) {
+    .btnContainer {
+        flex-direction: column;
+    }
+}

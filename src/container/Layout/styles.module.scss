@@ -1,0 +1,80 @@
+.container {
+    min-height: 100vh;
+}
+
+.navBar {
+    position: fixed;
+    height: 5rem;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: var(--surface-card);
+    transition: left .2s;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .02), 0 0 2px rgba(0, 0, 0, .05), 0 1px 4px rgba(0, 0, 0, .08)
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    transition: margin-left .2s;
+}
+
+// .marginStyle {
+//     padding: 6rem 1rem 0rem 3rem;
+// }
+
+.paddingStyle {
+    padding: 6rem 1rem 0rem 3rem;
+
+}
+
+.content {
+    flex: 1 1 auto
+}
+
+.noMargin {
+    margin-left: 0px;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+    .paddingStyle {
+        padding: 6rem 1rem 0rem 1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .appLogo {
+        order: 2;
+    }
+
+    .navbarContainer {
+        justify-content: space-between;
+    }
+
+    .paddingStyle {
+        padding: 6rem 1rem 0rem 1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .marginStyle {
+        margin-left: 300px
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .marginStyle {
+        margin-left: 300px
+    }
+}

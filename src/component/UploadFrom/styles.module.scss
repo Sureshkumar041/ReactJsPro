@@ -1,0 +1,26 @@
+.uploadFromContainer {
+    padding: 12px;
+    background-color: #EBF5FF;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 20px;
+    box-shadow: 0px 0px 4px 0px lightgrey;
+    cursor: pointer;
+}
+
+.iconContainer {
+    i {
+        font-size: 50px;
+    }
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #191F71;
+}

@@ -1,0 +1,267 @@
+.root {
+    padding: 20px 12px;
+    position: relative;
+}
+
+.rootContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.heading {
+    font-weight: 700;
+    color: var(--darkBlue);
+    font-size: 18px;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    padding-top: 12px;
+    width: 100%;
+    bottom: 10px;
+}
+
+.statusContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 16%;
+    box-shadow: 0px 0px 4px 1px lightgrey;
+    border-radius: 6px;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 12px;
+}
+
+.cardContainer>div>i {
+    font-size: 24px;
+}
+
+.dividerSty {
+    width: 2px;
+    height: 85px;
+    border-radius: 20px;
+    background-color: rgb(240, 240, 240)
+}
+
+.iconContainer {
+    background-color: lightgreen;
+    border-radius: 25px;
+    width: 50px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.greenBg {
+    background: linear-gradient(201.18deg, #D3FFE7 3.14%, #EFFFF6 86.04%);
+
+    i {
+        color: var(--green);
+    }
+}
+
+.redBg {
+    background: linear-gradient(201.18deg, rgba(172, 0, 0, 0.1) 3.14%, rgba(172, 0, 0, 0.1) 86.04%);
+
+    i {
+        color: var(--red);
+    }
+}
+
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 4px;
+}
+
+.content {
+    color: #ACACAC;
+    font-size: 12px;
+}
+
+.countText {
+    font-weight: 700;
+}
+
+.valueContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fieldContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.fieldIcon {
+    i {
+        font-size: 24px;
+        color: var(--darkBlue);
+    }
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: grid;
+    gap: 2.5rem;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+}
+
+.accordionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion {
+    width: 80%;
+}
+.horizontalLine {
+    border: 5px;
+    height: 2px;
+    background: #ccc; 
+    margin: 5px 0;
+  }
+
+.keyPairSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.keyPairPreviewSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.keyPairPreviewSection {
+    div {
+        padding: 1rem;
+    }
+
+    div:nth-child(1n) {
+        border-bottom: 1px solid lightgrey
+    }
+
+    div:nth-child(2n) {
+        border-bottom: 1px solid lightgrey
+    }
+
+    div:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+
+.keyPairContainer {
+    p:nth-child(1) {
+        color: grey;
+        font-size: 14px;
+    }
+
+    p:nth-child(2) {
+        color: black;
+        font-size: 18px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+    .statusContainer {
+        flex-direction: column;
+    }
+
+    .btnContainer {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .valueContainer {
+        flex-direction: column;
+        row-gap: 14px;
+        align-items: start;
+    }
+
+    .cards {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .accordion {
+        width: 100%;
+    }
+
+    .keyPairSection {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .keyPairPreviewSection {
+        grid-template-columns: 1fr;
+    }
+
+    .keyPairPreviewSection {
+        div {
+            padding: 0.5rem;
+        }
+
+        div:nth-child(1n) {
+            border-bottom: none
+        }
+
+        div:nth-child(2n) {
+            border-bottom: 1px solid lightgrey
+        }
+
+
+        div:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .rootContainer{
+        row-gap: 25px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .statusContainer {
+        flex-direction: column;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .keyPairSection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

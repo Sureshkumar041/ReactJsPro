@@ -29,16 +29,16 @@ body {
 
 .loginContainer {
     background-color: rgba(255, 255, 255, 1);
-    padding: 20px 30px;
+    padding: 10px 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     display: grid;
-    row-gap: 15px;
+    row-gap: 4px;
 }
 
 .signInText {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     text-align: center;
     color: var(--violet);
@@ -50,8 +50,7 @@ body {
 }
 
 .iconPng {
-    width: 250px;
-    height: 200px;
+    height: 100px;
 }
 
 .formBottomSection {
@@ -63,21 +62,32 @@ body {
 .formBottomSection>a {
     text-decoration: none;
     color: var(--primary);
-    padding: 12px 0px;
+    padding: 5px 0px;
 }
 
 .formContainer {
     display: grid;
-    row-gap: 15px;
 }
 
 .infoText {
     color: #666666;
-    font-weight: 700;
+    font-size: 16px;
+    /* font-weight: 700; */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
 }
 
-.infoText a {
+.infoText a,
+.formBottomSection a {
     color: var(--primary);
     text-decoration: none;
+    font-size: 12px;
+}
+
+.infoText {
+    p {
+        font-size: 12px;
+    }
 }

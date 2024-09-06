@@ -1,0 +1,54 @@
+.cardFlexContainer {
+    display: grid;
+    // flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-bottom: 5%;
+}
+
+.pageRoot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    row-gap: 80px;
+    margin-top: 8%;
+}
+
+.title {
+    color: #191F71;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .cardFlexContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .cardFlexContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .cardFlexContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .cardFlexContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

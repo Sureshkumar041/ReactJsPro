@@ -1,9 +1,8 @@
-import Text from "../text";
-import "./style.css";
+import styles from "./styles.module.scss";
 
 const ErrorText = ({ children, ...rest }) => {
   return (
-    <Text className={`error`}>{children}</Text>
+    <p className={`${styles?.error}`}>{children}</p>
   );
 };
 

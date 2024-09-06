@@ -1,0 +1,175 @@
+@font-face {
+    /* roboto_rg - Roboto Regular */
+    font-family: roboto_rg;
+    src: url('../assets/font/Roboto-Regular.ttf');
+}
+
+body {
+    font-family: roboto_rg;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+
+/* Table Start Css */
+.customTableStyle {
+    .p-datatable .p-datatable-thead>tr>th {
+        background-color: var(--primary) !important;
+        height: 45px !important;
+        padding: 6px !important;
+        text-align: center;
+        border: 1px solid #e5e7eb;
+        font-size: 14px !important;
+        text-transform: uppercase !important;
+        font-family: roboto_rg;
+    }
+
+    .p-column-title {
+        width: 100% !important;
+    }
+
+    .p-datatable .p-datatable-tbody>tr>td {
+        height: 45px !important;
+        padding: 6px !important;
+        border: 1px solid #e5e7eb;
+        font-size: 14px !important;
+        font-family: roboto_rg;
+    }
+
+    .p-datatable .p-sortable-column .p-sortable-column-icon {
+        color: #fff !important;
+    }
+
+    .p-paginator .p-dropdown .p-dropdown-label {
+        padding: 6px 0px 0px 6px !important;
+    }
+
+    /* Filter Icon */
+    .p-column-filter-menu-button,
+    .p-column-filter-clear-button {
+        color: #fff !important;
+        background-color: transparent;
+    }
+
+    .p-column-filter-menu-button:hover,
+    .p-column-filter-clear-button:hover {
+        background-color: transparent;
+    }
+
+
+    /* Rows Per Filter */
+    .p-dropdown-items-wrapper>ul {
+        padding-left: 0px !important;
+    }
+
+    /* Table highlights Color */
+    .p-datatable .p-datatable-tbody>tr.p-highlight {
+        background-color: #f6eafa;
+        color: #b15ad2;
+    }
+
+    /* CheckBox */
+    .p-checkbox.p-highlight .p-checkbox-box {
+        background-color: #b15ad2;
+    }
+
+    /* Color for even rows  */
+    tr:nth-child(even) {
+        background-color: #F3F3F3 !important;
+    }
+
+
+    /* Scroll Bar */
+    /* .p-datatable-wrapper {} */
+
+    .p-datatable-wrapper::-webkit-scrollbar {
+        /* display: none; */
+        width: 5px;
+        height: 2px;
+    }
+
+    .p-datatable-wrapper::-webkit-scrollbar-track {
+        background-color: rgb(240, 231, 231);
+    }
+
+    .p-datatable-wrapper::-webkit-scrollbar-thumb {
+        background-color: rgb(109, 109, 109, 0.5);
+        border-radius: 10px;
+    }
+
+
+    /*.p-datatable-wrapper {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    } */
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {}
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .p-datatable .p-datatable-header {
+            padding: 6px
+        }
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {}
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {}
+
+}
+
+.excelSummary {
+    .p-datatable-scrollable-table>.p-datatable-thead {
+        box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0px 4px 4px lightgrey;
+    }
+
+    tr:nth-child(even) {
+        background-color: transparent !important;
+    }
+
+    .p-datatable .p-datatable-tbody>tr>td {
+        text-align: center !important;
+    }
+}
+
+/* Table End Css */
+
+ul {
+    padding: 0px;
+}
+
+/* Start Mobile Menu Bar */
+.mobileMenuBar {
+    .p-menuitem-link {
+        text-decoration: none !important;
+    }
+}
+
+/* End Mobile Menu Bar */
+
+
+.pageTitle {
+    font-weight: 700;
+    color: var(--darkBlue);
+    font-size: 18px;
+}
+
+
+/* Start Accordion Css */
+.accordion {
+    a {
+        text-decoration: none !important;
+        background-color: rgba(25, 163, 243, 0.4) !important;
+        color: #000 !important;
+    }
+}
+
+/* End Accordion Css */

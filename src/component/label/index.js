@@ -1,10 +1,9 @@
-import Text from "../text";
-import "./style.css";
+import styles from "./styles.module.scss";
 
 const Label = ({ children, ...rest }) => {
   return (
-    <label {...rest}>
-      <Text className={`label`}>{children}</Text>
+    <label className={styles?.label} {...rest}>
+      <p>{children}</p>
     </label>
   );
 };

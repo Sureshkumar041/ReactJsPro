@@ -1,7 +1,11 @@
-import "./style.css";
+import styles from "./styles.module.scss";
 
 const Text = ({ children, ...rest }) => {
-  return <p className={`text`} {...rest}>{children}</p>;
+  return (
+    <p className={`${styles?.styles}`} {...rest}>
+      {children}
+    </p>
+  );
 };
 
 export default Text;

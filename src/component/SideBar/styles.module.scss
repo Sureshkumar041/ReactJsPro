@@ -1,0 +1,160 @@
+.sideBar {
+    position: fixed;
+    width: 300px;
+    height: calc(100vh - 9rem);
+    z-index: 999;
+    // overflow-y: auto;
+    top: 7rem;
+    left: 2rem;
+    transition: transform .2s, left .2s;
+    background-color: var(--surface-overlay);
+    border-radius: 12px;
+    padding: .5rem 1rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .02), 0 0 2px rgba(0, 0, 0, .05), 0 1px 4px rgba(0, 0, 0, .08)
+}
+
+.active {
+    background-color: var(--primary);
+}
+
+.userProfileContainer {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #CCCCCC;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: #fff;
+    height: 70px;
+}
+
+.profileImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.img {
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    width: 100%;
+    height: 100%;
+}
+
+.logoutIcon {
+    cursor: pointer;
+
+    i {
+        color: #45E9FE;
+        font-size: 24px;
+    }
+}
+
+.pageName {
+    font-size: 14px;
+}
+
+.sideBarContainer {
+    height: 100%;
+    position: relative;
+}
+
+.showSideBar {
+    display: block;
+}
+
+.sideBarContent {
+    overflow-y: scroll;
+    height: calc(100% - 140px);
+    /* Example height */
+}
+
+/* Ensuring content is still scrollable */
+.sideBarContent::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar in WebKit browsers */
+    // width: 1px;
+}
+
+.sideBarContent {
+    scrollbar-width: none;
+    /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* For IE and Edge */
+}
+
+
+
+.addNewBtn {
+    width: 100%;
+    height: 45px;
+
+    span {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .sideBar {
+        left: 0px;
+        margin: 2px;
+        width: 99%;
+    }
+
+    .sideBar:not(.showSideBar) {
+        display: none !important;
+    }
+
+    .hideSideBar {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .sideBar {
+        left: 0px;
+        margin: 2px;
+        width: 99%;
+    }
+
+    .sideBar:not(.showSideBar) {
+        display: none !important;
+    }
+
+    .hideSideBar {
+        display: none !important;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .sideBar {
+        display: block;
+    }
+
+    .hideSideBar {
+        display: none !important;
+    }
+
+    .showSideBar {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sideBar {
+        display: block;
+    }
+
+    .hideSideBar {
+        display: none !important;
+    }
+
+    .showSideBar {
+        display: block;
+    }
+}
