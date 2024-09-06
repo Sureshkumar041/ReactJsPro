@@ -1,7 +1,7 @@
 import { Chart } from "primereact/chart";
 import styles from "./styles.module.scss";
 
-const VerticalBarChart = () => {
+const VerticalBarChart = ({ data }) => {
   const textColor = "red";
   const textColorSecondary = "#191F71";
 
@@ -14,17 +14,17 @@ const VerticalBarChart = () => {
           labels: Array?.from({ length: 12 }, (v, i) => i + 1),
           datasets: [
             {
-              label: "My First dataset",
-              backgroundColor: "#191F71",
-              data: [65, 59, 80, 81, 56, 55, 65, 59, 80, 81, 56, 55],
+              label: data?.dataSet1?.label,
+              backgroundColor: data?.dataSet1?.backgroundColor,
+              data: data?.dataSet1?.data,
               categoryPercentage: 0.9,
-              barPercentage: 1.0,
+              barPerceontage: 1.0,
               borderRadius: 4,
             },
             {
-              label: "My Second dataset",
-              backgroundColor: "#4491D6",
-              data: [28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86],
+              label: data?.dataSet2?.label,
+              backgroundColor: data?.dataSet2?.backgroundColor,
+              data: data?.dataSet2?.data,
               categoryPercentage: 0.9,
               barPercentage: 1.0,
               borderRadius: 4,
