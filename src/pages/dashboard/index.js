@@ -3,9 +3,15 @@ import DashboardBarChart from "../../component/DashboardBarChart";
 import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import Loader from "../../component/Loader/index.js";
+import MonthlyDataChartBox from "../../component/Charts/Box/index.js";
+// import VerticalBarChart from "../../component/Charts/VerticalBar";
+import ForecastChart from "../../component/Charts/Forecast/index.js";
+import PlotDataChartPie from "../../component/Charts/Pie/index.js";
+import HeatMapChart from "../../component/Charts/HeatMap/index.js";
+import MonthlyYearlyLineGraphChart from "../../component/Charts/LineGraph/index.js";
 
 const Dashboard = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [mainChartData, setMainChartData] = useState({
     dataSet1: [],
     dataSet2: [],
@@ -13,7 +19,7 @@ const Dashboard = () => {
 
   const getGrossRevenue = async () => {
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const payload = {};
       const res = "";
       if (true || res?.status) {
@@ -28,7 +34,7 @@ const Dashboard = () => {
     } catch (error) {
       console.log("Catch getGrossRevenue: ", error?.message);
     } finally {
-      setIsLoading(false);
+      // setIsLoading(false);
     }
   };
 
@@ -36,38 +42,31 @@ const Dashboard = () => {
     getGrossRevenue();
   }, []);
 
+  const chartComponents = [
+    <PlotDataChartPie key="PlotDataChartPie" />,
+    <MonthlyDataChartBox key="MonthlyDataChartBox" />,
+    <MonthlyYearlyLineGraphChart key="MonthlyYearlyLineGraphChart" />,
+    <HeatMapChart key="HeatMapChart" />,
+  ];
+
   return (
     <div className={styles?.root}>
       <div className={`${styles?.miniChartContainer}`}>
         <div className={`${styles?.gridContainer}`}>
-          {Array?.from({ length: 4 }, (v, i) => i)?.map((v, index) => (
-            <div key={index} className={`${styles?.barChartContainer}`}>
-              <DashboardBarChart />
+          {chartComponents.map((ChartComponent, index) => (
+            <div key={index} className={styles?.barChartContainer}>
+              {ChartComponent} 
             </div>
           ))}
+         
         </div>
       </div>
       <div className={styles?.bigChartContainer}>
-        <div style={{ height: "100%", padding: "12px" }}>
-          <div style={{ height: "5%" }}>
-            <h3 style={{ color: "#191F71" }}>Monthly Gross Revenue</h3>
-          </div>
-          <div style={{ height: "95%", width: "99%" }}>
-            <VerticalBarChart
-              data={{
-                dataSet1: {
-                  data: mainChartData?.dataSet1,
-                  label: "My First dataset",
-                  backgroundColor: "#191F71",
-                },
-                dataSet2: {
-                  data: mainChartData?.dataSet2,
-                  label: "My Second dataset",
-                  backgroundColor: "#4491D6",
-                },
-              }}
-            />
-          </div>
+        <div style={{ height: "100%", padding: "12px",width:"100%" }}>
+          {/* <div style={{ height: "95%", width: "99%" }}> */}
+          {/* <h3 style={{ color: "#191F71" }}>Forecasted Water level for the next 6 Months</h3> */}
+            <ForecastChart />
+          {/* </div> */}
         </div>
       </div>
       <Loader />

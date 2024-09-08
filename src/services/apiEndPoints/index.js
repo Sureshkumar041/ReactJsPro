@@ -8,4 +8,9 @@ export const ApiEndPoints = {
   getFile: "/getFiles",
   getWaterData: "/getwaterData",
   deleteFile: "/dummyDelete",
+  getPlotData:"/getPlotData",
+  getMonthlyData:"/getmonthlyData",
+  getPlotMonthlyYears:"/plot_monthly_years",
+  getHeatmapData:"/getheatmapData",
+  getForecastData:"/forecast",
 };

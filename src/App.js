@@ -31,3 +31,37 @@ function App() {
 }
 
 export default App;
+
+// import React, { useState, useEffect } from 'react';
+// import Plotly from 'plotly.js-dist-min';
+// import { getMonthlyDataService } from './services/user';
+
+// function App() {
+//     const [data, setData] = useState(null);
+
+//     const getMonthlyData = async () => {
+//         try {
+//           const res = await getMonthlyDataService();
+//           if (true || res?.status) {
+//             setData(res?.data);
+//           } else {
+            
+//           }
+//         } catch (error) {
+//             console.log("Error fetching monthly data:", error?.message);
+//         }
+//       };
+
+//     useEffect(() => {
+//         getMonthlyData();
+//     }, []);
+//     useEffect(() => {
+//         if (data) {
+//             Plotly.newPlot("graph-div", data);
+//         }
+//     }, [data, getMonthlyData]);
+
+//     return <div id="graph-div"  className='graph-div'/>;
+// }
+
+// export default App;
