@@ -6,7 +6,7 @@ const isAuthenticated = () => {
 };
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  return !isAuthenticated() ? <Outlet /> : <Navigate to="/" />;
+  return isAuthenticated() ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;

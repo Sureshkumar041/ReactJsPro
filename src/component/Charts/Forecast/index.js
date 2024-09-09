@@ -2,34 +2,60 @@ import React, { useState, useEffect } from "react";
 import Plotly from "plotly.js-dist-min";
 import { getForecastService } from "../../../services/user";
 
-var trace1 = {
-  x: [1, 2, 3, 4],
-  y: [10, 15, 13, 17],
-  mode: "markers",
-};
-
-var trace2 = {
-  x: [2, 3, 4, 5],
-  y: [16, 5, 11, 10],
-  mode: "lines",
-};
-
-var trace3 = {
-  x: [1, 2, 3, 4],
-  y: [12, 9, 15, 12],
-  mode: "lines+markers",
-};
-
-var dummyData = [trace1, trace2, trace3];
+const processedData = [
+    {
+        mode: "lines",
+        name: "Historical Water Level",
+        type: "scatter",
+        x: [
+            "2023-11-01T00:00:00",
+            "2023-12-01T00:00:00",
+            "2024-01-01T00:00:00",
+            "2024-02-01T00:00:00",
+            "2024-03-01T00:00:00"
+        ],
+        y: [
+            30.0,
+            386.5,
+            321.5,
+            360.5,
+            32.5
+        ]
+    },
+    {
+        line: { color: "orange" },
+        mode: "lines",
+        name: "Forecasted Water Level",
+        type: "scatter",
+        x: [
+            "2024-04-30T00:00:00",
+            "2024-05-31T00:00:00",
+            "2024-06-30T00:00:00",
+            "2024-07-31T00:00:00",
+            "2024-08-31T00:00:00",
+            "2024-09-30T00:00:00"
+        ],
+        y: [
+            372.7638668707957,
+            241.11107744624056,
+            265.9373661527567,
+            261.2557744171521,
+            262.1386007404087,
+            261.9721226788752
+        ]
+    }
+];
 
 function ForecastChart() {
-  const [data, setData] = useState(0);
+  const [data, setData] = useState([]);
+  const [layout, setlayout]=useState({})
 
   const getForecastData = async () => {
     try {
       const res = await getForecastService();
       if (true || res?.status) {
-        setData(res?.data);
+        setData(flattenYValues(res?.data));
+        setlayout(res?.layout)
       } else {
       }
     } catch (error) {
@@ -41,21 +67,33 @@ function ForecastChart() {
     getForecastData();
   }, []);
 
-  useEffect(() => {
-    if (data) {
-      const layout = {
-        title: "Forecasted Water level for the Next 6 Months",
+  // Function to flatten the y values
+function flattenYValues(data) {
+  return data.map(item => {
+      if (Array.isArray(item.y) && Array.isArray(item.y[0])) {
+          // Flatten y values if it's an array of arrays
+          item.y = item.y.flat();
+      }
+      return item;
+  });
+}
 
-        xaxis: {
-          title: "Data", // Label for the x-axis
-          rangeslider: { visible: true }
-        },
-        yaxis: {
-          title: "Water Level (Meters)", // Label for the y-axis
-        },
-        type: "scatter",
+  useEffect(() => {
+    if (data && data.length > 0) {
+      // const layout = {
+      //   title: "Forecasted Water level for the Next 6 Months",
+      //   line: { color: "orange" }  ,
+      //   xaxis: {
+      //     title: "Data", 
+      //     rangeslider: { visible: true },
+      //     mode: 'lines+markers'
+      //   },
+      //   yaxis: {
+      //     title: "Water Level (Meters)", 
+      //     mode: 'lines+markers'
+      //   },
         
-      };
+      // };
       const config = {
         displaylogo: false, 
         modeBarButtonsToRemove: [

@@ -37,7 +37,7 @@ const Login = () => {
           JSON.stringify({ username: values?.username })
         );
         localStorage.setItem("accessToken", JSON.stringify(true));
-        ShowToast({ showToast, msg: "Login Successfully" });
+        ShowToast({ showToast, msg: "Logged in Successfully" });
         navigate("/dashboard");
       } else {
         ShowToast({
