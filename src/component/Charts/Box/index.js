@@ -5,6 +5,7 @@ import { getMonthlyDataService } from '../../../services/user';
 function MonthlyDataChartBox() {
     const [data, setData] = useState(null);
 
+
     const getMonthlyData = async () => {
         try {
           const res = await getMonthlyDataService();
@@ -40,6 +41,13 @@ function MonthlyDataChartBox() {
             modeBarButtonsToRemove: [
               "zoom2d", "select2d", "lasso2d",   
             ],
+            toImageButtonOptions: {
+              format: 'png', // Can also be 'jpeg', 'webp', 'svg'
+              filename: 'Monthly Water Level Distribution',
+              width: 1200, // Set desired width
+              height: 800, // Set desired height
+              scale: 7 // Increase the scale for higher resolution
+            },
           };
             Plotly.newPlot("Box-chart", data, layout, config);
         }

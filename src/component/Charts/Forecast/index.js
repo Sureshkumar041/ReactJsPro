@@ -99,6 +99,13 @@ function flattenYValues(data) {
         modeBarButtonsToRemove: [
           "zoom2d", "select2d", "lasso2d",   
         ],
+        toImageButtonOptions: {
+          format: 'png', // Can also be 'jpeg', 'webp', 'svg'
+          filename: 'Forecasted Water level for the Next 6 Months',
+          width: 1200, // Set desired width
+          height: 800, // Set desired height
+          scale: 7 // Increase the scale for higher resolution
+        },
       };
       Plotly.newPlot("forecast", data, layout, config);
     }

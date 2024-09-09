@@ -46,6 +46,13 @@ function HeatMapChart() {
                 modeBarButtonsToRemove: [
                     "zoom2d", "select2d", "lasso2d",   
                   ],
+                  toImageButtonOptions: {
+                    format: 'png', 
+                    filename: 'Monthly Water Level Heatmap',
+                    width: 1200, 
+                    height: 800, 
+                    scale: 7 
+                  },
               };
            
             Plotly.newPlot("Heat-map", data, layout, config );

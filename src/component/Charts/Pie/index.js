@@ -25,6 +25,7 @@ function PlotDataChartPie() {
       const res = await getPlotDataService();
       if (true || res?.status) {
         setData(res?.data);
+
       } else {
         
       }
@@ -55,6 +56,14 @@ function PlotDataChartPie() {
         modeBarButtonsToRemove: [
           "zoom2d", "select2d", "lasso2d",   
         ],
+        //Download image properties
+        toImageButtonOptions: {
+          format: 'png', 
+          filename: 'Average Water Level by Year',
+          width: 1200, 
+          height: 800, 
+          scale: 7 
+        },
       };
       
       Plotly.newPlot("pieChart", data, layout, config);
@@ -65,47 +74,3 @@ function PlotDataChartPie() {
 }
 
 export default PlotDataChartPie;
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import Plotly from 'plotly.js-dist-min';
-
-// function PlotDataChartPie() {
-
-//   const [plot, setPlot] = useState(0);
-
-//   useEffect(() => {
-//     fetch('https://nextentlabs.com:81/getPlotData')
-//       .then(res => res.json())
-//       .then(data => {
-//         setPlot(data);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching the data:', error);
-//       });
-//   }, []);
-
-
-
-//   useEffect(() => {
-//     if (plot) {
-//       Plotly.newPlot("graph-div", plot, {});
-
-//     }
-//   }, [plot]);
-
-//   return (
-//     <div >
-
-//       <div id="graph-div" className="graph-div">
-//       </div>
-
-//     </div>
-//   );
-// }
-
-// export default PlotDataChartPie;
-
-

@@ -43,6 +43,13 @@ function MonthlyYearlyLineGraphChart() {
         modeBarButtonsToRemove: [
           "zoom2d", "select2d", "lasso2d",   
         ],
+        toImageButtonOptions: {
+          format: 'png', 
+          filename: 'Water Level Comparison Over Year',
+          width: 1200, 
+          height: 800, 
+          scale: 7,
+        },
         
       };
       Plotly.newPlot("graph-div", data, layout,config );

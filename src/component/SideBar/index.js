@@ -118,7 +118,8 @@ const MenuBar = () => {
       }`}
     >
       <div className={styles?.sideBarContainer}>
-        <div style={{ padding: "6px 4px" }}>
+        <div style={{ padding: "6px 4px" , display:"flex", justifyContent:"center"}}>
+         
           <Button
             label={"Add New"}
             className={styles?.addNewBtn}
